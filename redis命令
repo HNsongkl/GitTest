@@ -1,0 +1,63 @@
+redis命令
+
+设置键值对
+set key value
+
+获取对应的值
+get key
+
+incr自增1； key不存在或value值为数字时 对应的值自增1，使用incr保证操作原子性
+
+expire 设置键值对有效时间
+expire key  时间
+
+TTL 查询剩余时间  -2表示过期删除   A -1 表示永久
+TTL key
+
+
+LIST操作
+LPUSH  LISTNAME value 从左边向list中加元素
+
+RPUSH  LISTNAME value 从右边向list中加元素
+
+LLEN LISTNAME  获取list元素个数
+
+LRANGE LISTNAME 0 2 获取LISTNAME中 第0-2的元素 （0 -1）表示所有元素
+
+LPOP LISTNAME 从左边删除LISTNAME中的一个元素
+
+RPOP LISTNAME 从右边开始删除LISTNAME中的一个元素
+
+SET操作  无序SET
+SADD SETNAME value 向set中新增元素value
+
+SREM SETNAME value 删除set中的value元素
+
+SISMEMBER SETNAME value 判断set中是否存在value元素  存在则返回1 不存在返回0
+
+SMEMBERS SETNAME 列出set中所有元素
+
+SUNION SETNAME1 SETNAME2 合并两个set 去除两个set中相同元素
+
+
+SETS  有序SET
+ZADD SETNAME score member  向SETNAME中新增元素member ，其中socre是用于排序的字段
+
+ZRANGE SETNAME start end 列出setname中第start至end的所有元素 0 -1表示全部
+
+HASH操作
+HSET MAPNAME key value 向MAPNAME中新增key-value
+
+HMSET MAPNAME key1 value1 key2 value2 key3 value3  向MAPNAME中新增多个key-value
+
+HGETALL MAPNAME  列出MAPNAME中所有key-value
+
+HGET MAPNAME key 获取MAPNAME中key的value值
+
+HINCRBY MAPNAME key sorce
+
+
+
+
+
+
